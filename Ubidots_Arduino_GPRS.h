@@ -7,6 +7,9 @@
 #include <avr/pgmspace.h>
 #define USER_AGENT  "Ubidots/v1 ArduinoGPRS/1.0"
 #define BAUDRATE 19200
+#define	POWER_PIN 9
+#define RX_PIN 7 
+#define TX_PIN 8
 
 typedef struct Value {
   char  *id;
@@ -17,7 +20,7 @@ typedef struct Value {
 
 class Ubidots{
     private:
-        SoftwareSerial _client = SoftwareSerial(7, 8);      
+        SoftwareSerial _client = SoftwareSerial(RX_PIN, TX_PIN);      
         bool httpInit();
         char* _token;
         bool httpTerm();

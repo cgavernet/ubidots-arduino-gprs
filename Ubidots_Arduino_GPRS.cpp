@@ -15,12 +15,12 @@ Ubidots::Ubidots(char* token){
  * This function is to power up or down GPRS Shield
  */
 void Ubidots::powerUpOrDown(){
-  pinMode(9, OUTPUT); 
-  digitalWrite(9,LOW);
+  pinMode(POWER_PIN, OUTPUT); 
+  digitalWrite(POWER_PIN,LOW);
   delay(1000);
-  digitalWrite(9,HIGH);
+  digitalWrite(POWER_PIN,HIGH);
   delay(2000);
-  digitalWrite(9,LOW);
+  digitalWrite(POWER_PIN,LOW);
   delay(3000);
   readData(4000);
 }
